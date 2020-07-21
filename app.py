@@ -35,13 +35,11 @@ def game():
                     tr = False
                 z += 1
             z %= 3
-            print(arr[z])
             act, ind = arr[z], z
             # Get random choice
             act = get_act(time_now_sec, ind, act)
             d = {"Бумага": "Камень", "Ножницы": "Бумага", "Камень": "Ножницы"}
             # Check results
-            print(time_now_sec)
             if act == res or d[act] == res:
                 resp = flask.make_response(flask.render_template("index_post_loose.html"))
             else:
